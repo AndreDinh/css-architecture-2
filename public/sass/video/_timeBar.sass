@@ -1,11 +1,10 @@
-$backgroundGradient: top,#A0DCFF 50%,#3FB7FC 50%,#16A9FF 100%
-$box-shadow:0 0 1px #fff
+@import config
 @import mixen
 .timeBar
   z-index:10
   width:0
   background: #3FB7FC /* fallback */
-  @include background($backgroundGradient)
+  @include background($timeBackgroundGradient)
   @include box-shadow($box-shadow)
   position: absolute
   top: 0
@@ -13,6 +12,7 @@ $box-shadow:0 0 1px #fff
   width: 0
   height: 100%
   background-color: #ccc
+
 /* time and duration */
 .time
   width:15%

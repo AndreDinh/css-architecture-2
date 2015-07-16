@@ -1,21 +1,19 @@
-$gradients: top,#666,#333
-$bufferBar: top,#999,#666
-$radius: 10px
+@import config
 @import mixen
 
 /* Progress bar */
 .progress
   width:85%
-  height:$radius
+  height:$borderRadius
   position:relative
   float:left
   cursor:pointer
   background: #444 /* fallback */
-  @include background($gradients)
+  @include background($progressGradients)
   box-shadow:0 2px 3px #333 inset
   -moz-box-shadow:0 2px 3px #333 inset
   -webkit-box-shadow:0 2px 3px #333 inset
-  @include borderRadius($radius)
+  @include borderRadius($borderRadius)
 
 .progress span
   height:100%
@@ -23,7 +21,7 @@ $radius: 10px
   top:0
   left:0
   display:block
-  @include borderRadius($radius)
+  @include borderRadius($borderRadius)
 
 .bufferBar
   z-index:5
@@ -37,5 +35,5 @@ $radius: 10px
 .progressBar
     position: relative
     width: 100%
-    height: $radius
+    height: $borderRadius
     backgroud-color: #000

@@ -1,8 +1,4 @@
-$backgroundColor: #1F1F1F
-$pixels: 30px
-$borderType: 1px solid #404040
-$gradient: top,#242424 50%,#1F1F1F 50%,#171717 100%
-$backgroundURl: url(../resources/photos/control.png) no-repeat
+@import config
 @import mixen
 /*** VIDEO CONTROLS CSS ***/
 .control
@@ -30,8 +26,8 @@ $backgroundURl: url(../resources/photos/control.png) no-repeat
 
 .control div.btn
   float:left
-  width:$pixels
-  height:$pixels
+  width:$pixelsDimension
+  height:$pixelsDimension
   padding:0 5px
   border-right:$borderType
   cursor:pointer
@@ -39,7 +35,7 @@ $backgroundURl: url(../resources/photos/control.png) no-repeat
 .control div.text
   font-size:12px
   font-weight:bold
-  line-height:$pixels
+  line-height:$pixelsDimension
   text-align:center
   font-family:verdana
   width:20px
