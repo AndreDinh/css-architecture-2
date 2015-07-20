@@ -1,13 +1,18 @@
+@mixin webkitAppearance ($style)
+    -webkit-appearance: ($style)
+       -moz-appearance: ($style)
+            appearance: ($style)
+
 input[type="reset"], input[type="submit"]
-  -webkit-appearance: button /* 2 */
-  cursor: pointer /* 3 */
+  webkitAppearance(button)
+  cursor: pointer
 input
   line-height: normal
 
 input[type="checkbox"],
 input[type="radio"]
-  box-sizing: border-box /* 1 */
-  padding: 0 /* 2 */
+  box-sizing: border-box
+  padding: 0
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button
@@ -37,9 +42,7 @@ input[type="email"]
   box-sizing: border-box
 
 input[type="email"]
-  -webkit-appearance: none
-     -moz-appearance: none
-          appearance: none
+@include webkitAppearance(none)
 
 input[type="email"]:focus
   border: 1px solid #03909b

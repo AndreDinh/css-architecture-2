@@ -1,22 +1,13 @@
-@media (min-width: 400px)
-  .container
-    width: 85%
-    padding: 0
-
-
-@media (min-width: 550px)
-  .container
-    width: 80%
-
+$approveImg: url("../photos/status-sprite.jpg")no-repeat -24px -56px
+$notApprovedImg: url("../photos/status-sprite.jpg")no-repeat -168px -56px
+$displayProp:none
+$typeofAnimation: opacity 1s ease-in-out
+@import mediaQueriesMixen
 
 @media (min-width: 320px)
+
   .flex-container
-    display:flex
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: space-between
-    align-content: flex-end
-    align-items: flex-end
+    @include flexSpaceBetween
 
   .logo
     max-width: 20%
@@ -28,14 +19,11 @@
     text-align: center
     font-size: 0.688em
 
-  header a:hover
-    font-size: 0.938em
-
   .main_header
     text-align: center
 
   .section_formatting
-  height: 60%
+    height: 60%
 
   .social_section a
     font-size: 4em
@@ -47,12 +35,10 @@
   .news_author_pic
     margin-top: 5%
 
-
 @media (min-width: 550px)
+
   .news_content
-    margin: 5%
-    padding-right: 3%
-    padding-left: 3%
+    padding: 0 3%
     width: 100%
     font-size: 0.875em
 
@@ -63,18 +49,15 @@
      font-size: 5em
 
   label[for="nav-trigger"]
-    display: none
+    display: $displayProp
 
   .mobile_navigation
-    display: none
-
-
+    display: $displayProp
 
 @media (min-width: 750px)
   .navlink
     float:right
     padding:3%
-    text-align: center
     font-size: 0.875em
 
   .news_content
@@ -82,11 +65,7 @@
     width:80%
 
   .flex-container
-    display:flex
-    flex-direction: row
-    flex-wrap: nowrap
-    justify-content: center
-    align-items: center
+    @include flexCenter
 
   .social_section a
     font-size: 7em
@@ -101,22 +80,12 @@
     margin-top: -15%
     padding-bottom: 8%
 
-  header a:hover
-    font-size: 1.063em
-
-  .container
-    max-width: 1600px
-
   .navlink
     font-size: 0.938em
 
-  header a:hover
-    font-size: 1.188em
-
-
 @media (min-width: 0px) and (max-width: 550px)
   .navlink
-    display: none
+    display: $displayProp
 
   .crossfade_image
     position:relative
@@ -124,10 +93,7 @@
   .bottom
     position:absolute
     left:0
-    -webkit-transition: opacity 1s ease-in-out
-    -moz-transition: opacity 1s ease-in-out
-    -o-transition: opacity 1s ease-in-out
-    transition: opacity 1s ease-in-out
+    @include animation($typeofAnimation)
 
   .bottom:hover
     opacity:0
@@ -141,11 +107,7 @@
     height: 6rem
 
   .approved
-    background: url("../photos/status-sprite.jpg")no-repeat -24px -56px
+    background: $approveImg
 
   .notApproved
-    background: url("../photos/status-sprite.jpg")no-repeat -168px -56px
-
-  .completed
-    background-color: #d4d4d3
-
+    background:$notApprovedImg

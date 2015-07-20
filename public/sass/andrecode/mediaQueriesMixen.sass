@@ -1,0 +1,19 @@
+@mixin flexSpaceBetween
+  display:flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: space-between
+  align-content: flex-end
+  align-items: flex-end
+@mixin flexCenter
+  display:flex
+  flex-direction: row
+  flex-wrap: nowrap
+  justify-content: center
+  align-items: center
+
+@mixin animation($animate)
+    -webkit-transition:($animate)
+    -moz-transition:($animate)
+    -o-transition:($animate)
+    transition:($animate)
